@@ -1,0 +1,57 @@
+<!-- grid-template -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | Grid Template</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #ddd;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            display: grid;
+            /* grid-template-rows: [baris1-mulai] 50px
+            [baris1-akhir baris2-mulai] 50px [baris2-akhir];
+            grid-template-columns: 1fr 2fr 3fr;
+            grid-template-areas: 
+                'header header header'
+                'footer footer footer'; */
+            grid-template: [baris1-mulai] 'header header header' 50px [baris1-akhir baris2-mulai] 'footer footer footer' 100px [baris2-akhir] / 1fr 2fr 3fr;
+        }
+
+        .item {
+            background-color: rgb(138, 209, 254);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding: 100px; */
+            box-sizing: border-box;
+        }
+
+        .item:nth-child(even) {
+            background-color: rgb(255, 142, 142);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!-- grid-template-area -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | Grid Template Area</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ddd;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                'header header header'
+                'content content content'
+                'sidebar sidebar sidebar'
+                'footer footer footer';
+        }
+
+        .item {
+            width: 100%;
+            background-color: rgb(138, 209, 254);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+
+        /* .item:nth-child(even) {
+            background-color: rgb(255, 142, 142);
+        } */
+
+        .header {
+            grid-area: header;
+            background-color: lightblue;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(255, 255, 188);
+        }
+
+        .content {
+            grid-area: content;
+            background-color: rgb(177, 255, 177);
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: rgb(57, 57, 57);
+        }
+
+
+        /* Responsive Breakpoint */
+        @media screen and (min-width: 576px) {
+            .container {
+            grid-template-areas: 
+                'header header header'
+                'sidebar content content'
+                'sidebar content content'
+                'footer footer footer';
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item header">header</div>
+        <div class="item sidebar">sidebar</div>
+        <div class="item content">content</div>
+        <div class="item footer">footer</div>
+        <!-- <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div> -->
+    </div>
+    
+</body>
+</html>
